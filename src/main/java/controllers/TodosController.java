@@ -17,7 +17,7 @@ public class TodosController
     public TodosController() {
         if (this.allTodos == null || this.allTodos.size() == 0) {
             this.allTodos = new ArrayList<Todo>();
-            this.allTodos = util.helpers.prePopulateTodos();
+            this.allTodos =  util.helpers.prePopulateTodos();
         }
     }
 
