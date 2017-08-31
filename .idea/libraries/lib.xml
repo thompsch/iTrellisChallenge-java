@@ -1,0 +1,36 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/jsr181-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/gmbal-api-only.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/jersey-server.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/saaj-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/jersey-client.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/jersey-container-servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/FastInoset.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/jersey-common.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/ha-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/management-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/jaxb-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/mimepull.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/javax.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/jaxb-xjc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/policy.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/stax-ex.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/saaj-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/woodstox-core-asl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/streambuffer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/javax.ws.rs-api-2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/jaxb-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/jaxws-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/jaxws-tools.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/jersey-container-servlet-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/jaxws-rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/TodosAPI_war_exploded/WEB-INF/lib/stax2-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.ws.rs-api-2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

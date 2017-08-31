@@ -13,11 +13,11 @@ import java.util.stream.Collectors;
 @Path("/todos")
 public class TodosController
 {
-    private static ArrayList<Todo> allTodos;
+    static ArrayList<Todo> allTodos;
     public TodosController() {
-        if (this.allTodos == null || this.allTodos.size() == 0) {
-            this.allTodos = new ArrayList<Todo>();
-            this.allTodos = util.helpers.prePopulateTodos();
+        if (allTodos == null || allTodos.size() == 0) {
+            allTodos = new ArrayList<Todo>();
+            allTodos = util.helpers.prePopulateTodos();
         }
     }
 
@@ -30,7 +30,7 @@ public class TodosController
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/")
     public List<Todo> listTodos() {
-        return this.allTodos;
+        return allTodos;
     }
 
     /**
@@ -41,7 +41,7 @@ public class TodosController
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/pending")
     public List<Todo> listActiveTodos() {
-        List<Todo> result = this.allTodos.stream().filter(t -> t.IsCompleted == false).collect(Collectors.toList());
+        List<Todo> result = allTodos.stream().filter(t -> t.IsCompleted == false).collect(Collectors.toList());
         return result;
     }
 
@@ -53,7 +53,7 @@ public class TodosController
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/overdue")
     public List<Todo> listOverdueTodos() {
-        List<Todo> result = this.allTodos.stream().filter(t -> t.IsCompleted == false &&
+        List<Todo> result = allTodos.stream().filter(t -> t.IsCompleted == false &&
                 t.DueDate.compareTo(new Date()) < 0).collect(Collectors.toList());
         return result;
     }
@@ -66,7 +66,7 @@ public class TodosController
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/complete")
     public List<Todo> listCompleteTodos() {
-        List<Todo> result = this.allTodos.stream().filter(t -> t.IsCompleted == true).collect(Collectors.toList());
+        List<Todo> result = allTodos.stream().filter(t -> t.IsCompleted == true).collect(Collectors.toList());
         return result;
     }
 
@@ -80,7 +80,7 @@ public class TodosController
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{uuid}")
     public Todo getTodo(@PathParam("uuid") String value) {
-        Todo result = this.allTodos.stream().filter(t -> t.Id.toString().equals(value)).findFirst().orElse(new Todo());
+        Todo result = allTodos.stream().filter(t -> t.Id.toString().equals(value)).findFirst().orElse(null);
         return result;
     }
 
@@ -95,7 +95,7 @@ public class TodosController
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public PostResponse updateTodo(@PathParam("uuid") String stringUuid, Todo tInput){
-        Todo existing = this.allTodos.stream().filter(t -> t.Id.toString().equals(stringUuid)).findFirst().orElse(null);
+        Todo existing = allTodos.stream().filter(t -> t.Id.toString().equals(stringUuid)).findFirst().orElse(null);
         if (existing != null) {
             if (tInput.Details != null) existing.Details = tInput.Details;
             if (tInput.DueDate != null) existing.DueDate = tInput.DueDate;
@@ -115,14 +115,15 @@ public class TodosController
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     //@Produces(MediaType.APPLICATION_JSON)
-    public PostResponse addOrUpdateTodo (Todo tInput){
+    public PostResponse addTodo (Todo tInput){
         try {
             if (tInput.Id != null) {
-                return new PostResponse("error", "A TODO with that ID already exists. Did you " +
-                        "mean to update it? If so, include the ID in the URL path.", null);
+                allTodos.add(tInput);
+                String result = "TODO added: " + tInput;
+                return new PostResponse("success", "A new TODO has been created.", tInput);
             } else {
                 Todo tNew = new Todo(tInput); // allows us to pass in a TODO that doesn't have an ID yet.
-                this.allTodos.add(tNew);
+                allTodos.add(tNew);
                 String result = "TODO added: " + tNew;
                 return new PostResponse("success", "A new TODO has been created.", tNew);
             }
@@ -140,10 +141,10 @@ public class TodosController
     @Path("/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)
     public PostResponse deleteTodo(@PathParam("uuid") String stringUuid){
-        Todo existing = this.allTodos.stream().filter(t -> t.Id.toString().equals(stringUuid)).findFirst().orElse(null);
+        Todo existing = allTodos.stream().filter(t -> t.Id.toString().equals(stringUuid)).findFirst().orElse(null);
         if (existing != null) {
             try {
-                this.allTodos.remove(existing);
+                allTodos.remove(existing);
                 return new PostResponse("success", "The TODO with ID " + stringUuid + " was deleted.", null);
             } catch (Exception ex) {
                 return new PostResponse("error", ex.toString(), null);

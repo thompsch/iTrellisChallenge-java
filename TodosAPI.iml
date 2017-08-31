@@ -23,7 +23,20 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.0.M26" level="application_server_libraries" />
-    <orderEntry type="library" exported="" name="Jersey-2.2" level="project" />
-    <orderEntry type="library" exported="" name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2" level="project" />
+    <orderEntry type="library" name="Jersey-2.2" level="project" />
+    <orderEntry type="library" name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2" level="project" />
+    <orderEntry type="library" exported="" name="lib" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 4.1.2" level="application_server_libraries" />
+    <orderEntry type="library" name="Arquillian JUnit:Release" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library name="JUnit5">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/junit-jupiter-api-5.0.0-RC2.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/opentest4j-1.0.0-RC1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
