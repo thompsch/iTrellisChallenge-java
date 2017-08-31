@@ -53,7 +53,7 @@ public class TodosControllerTest {
 
     @Test
     public void updateTodoTest() throws Exception {
-        Todo tToUpdate = controller.allTodos.get(3);
+        Todo tToUpdate = TodosController.allTodos.get(3);
         tToUpdate.Details = "ohhai I'm the details";
         tToUpdate.Task = "ohhai I'm an updated task description.";
         controller.updateTodo(tToUpdate.Id.toString(), tToUpdate);

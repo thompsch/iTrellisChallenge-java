@@ -154,17 +154,3 @@ public class TodosController
         }
     }
 }
-
-//unit tests!!
-
-
-//add SORTING
-
-// USER STORIES
-/*As a user, I can add a TODO to the list.
-As a user, I can see all the TODOs on the list in an overview.
-As a user, I can drill into a TODO to see more information about the TODO.
-As a user, I can delete a TODO.
-As a user, I can mark a TODO as completed.
-As a user, when I see all the TODOs in the overview, if today's date is past the TODO's deadline, highlight it.*/
-
