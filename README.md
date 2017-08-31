@@ -23,6 +23,19 @@ and Jersey for the JSON support. It can be deployed locally using GlassFish 4.1.
 - Because this is all in-memory and not using a backing store, there is a method in /src/util/helpers.java that pre-populates the TODO collection.
 
 ### Deploying
+This app is currently set up to use GlassFish 4.1. In your IDE (I'm using Intellij IDEA), set up a Glassfish 4 deployment. Once the server has started,
+you can browse to http://localhost:8080/TodosAPI_war_exploded/todos.
 
 ### Testing
+There are currently unit tests for each of the controller routes. Further testing
+might include performance tests, and certainly would benefit from more testable TODOs.
+
+### If this were a real project and/or I had more time...
+- I would move the in-memory implementation to the test framework.
+- I would implement a DB for persisting the data.
+- I would add Authentication and a Users table.
+- With that, we could auto-populate a "task assigned to" field with the
+authenticated user's name and expand our APIs to query based on user.
+- I would create a UI and/or mobile app to demonstrate the APIs.
+
 
